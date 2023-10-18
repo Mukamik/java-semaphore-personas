@@ -1,1 +1,1 @@
-FROM gcr.io/cloud-workstations-external/intellij-ultimate-chrome:latest 
+FROM us-central1-docker.pkg.dev/cloud-workstations-images/predefined/code-oss:latest
