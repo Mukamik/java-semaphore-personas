@@ -1,0 +1,10 @@
+FROM us-central1-docker.pkg.dev/cloud-workstations-images/predefined/intellij-ultimate:latest
+
+#Install SDKMan
+RUN apt-get update && apt-get install curl bash unzip zip -y
+
+RUN curl -s "https://get.sdkman.io" | bash
+RUN /bin/bash -c "source /root/.sdkman/bin/sdkman-init.sh; sdk install java 21-tem; sdk use java 21-tem"
+
+#Install Cloud Code plugin
+RUN /installer-scripts/plugin-installer.sh -v 23.10.1-api-version-222 -d /opt/intellij/extensions/google-cloud-code 8079
